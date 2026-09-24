@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Jewelry Box - our story, values, and the people behind Kampala's elegant jewelry collection.">
+<title>About Us | Jewelry Box</title>
+<style>
+:root{
+  --gold:#c89b3c; --gold2:#e6c46a; --dark:#17130f; --cream:#fbf7ef;
+  --white:#fff; --muted:#746b60; --line:#e9e0d3; --green:#198754;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+button,input,select{font:inherit}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--dark);color:#fff;text-align:center;padding:9px;font-size:13px;letter-spacing:.4px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;height:76px;display:flex;align-items:center;gap:30px;padding:0 20px}
+.logo{font-family:Georgia,serif;font-size:29px;font-weight:700;letter-spacing:1px;white-space:nowrap}
+.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:24px;margin-left:auto}
+.navlinks a{font-size:14px;font-weight:700}
+.navlinks a:hover{color:var(--gold)}
+.navlinks a.active{color:var(--gold)}
+.actions{display:flex;gap:9px;align-items:center}
+.iconbtn{border:0;background:#f5efe5;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:18px;position:relative}
+.badge{position:absolute;right:-2px;top:-3px;background:var(--gold);color:#fff;border-radius:20px;font-size:10px;padding:2px 6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:5px;padding:13px 22px;cursor:pointer;font-weight:800;transition:.2s}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#ad8229;transform:translateY(-1px)}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800;margin-bottom:10px}
+.page-hero{background:linear-gradient(rgba(23,19,15,.72),rgba(23,19,15,.72)),url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1600&q=85") center/cover;color:#fff;text-align:center;padding:110px 20px}
+.page-hero h1{font-family:Georgia,serif;font-size:clamp(38px,5vw,58px);margin-bottom:14px}
+.page-hero p{max-width:700px;margin:0 auto;color:#e2d9cd;font-size:17px}
+.section{max-width:1200px;margin:auto;padding:75px 20px}
+.section-head{text-align:center;margin-bottom:40px}
+.section-head h2{font-family:Georgia,serif;font-size:38px;margin-bottom:8px}
+.section-head p{color:var(--muted)}
+.about-story{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-story img{width:100%;height:430px;object-fit:cover;border-radius:14px}
+.about-story h2{font-family:Georgia,serif;font-size:40px;margin-bottom:16px}
+.about-story p{color:var(--muted);margin-bottom:14px;font-size:16px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.value-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 24px;text-align:center;transition:.2s}
+.value-card:hover{box-shadow:0 10px 28px rgba(0,0,0,.06)}
+.value-card .icon{font-size:36px;display:block;margin-bottom:14px}
+.value-card h4{font-family:Georgia,serif;font-size:21px;margin-bottom:8px}
+.value-card p{font-size:14px;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}
+.feature{background:#fff;border:1px solid var(--line);padding:24px;border-radius:10px}
+.feature b{display:block;margin-bottom:6px;font-size:17px}
+.feature span{font-size:13px;color:var(--muted)}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:10px}
+.team-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line);text-align:center;padding-bottom:24px}
+.team-card img{width:100%;height:250px;object-fit:cover}
+.team-card h4{font-family:Georgia,serif;font-size:21px;margin-top:18px}
+.team-card span{color:var(--gold);font-weight:700;font-size:12px;letter-spacing:1px}
+.team-card p{padding:0 20px;font-size:14px;color:var(--muted);margin-top:8px}
+.cta-strip{background:var(--dark);color:#fff;text-align:center;padding:70px 20px;border-radius:16px;max-width:1200px;margin:40px auto 75px}
+.cta-strip h2{font-family:Georgia,serif;font-size:36px;margin-bottom:10px}
+.cta-strip p{color:#cfc6ba;margin-bottom:24px}
+footer{background:var(--dark);color:#eee;padding:55px 20px 25px}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:35px}
+footer h3{font-family:Georgia,serif;color:#fff;margin-bottom:12px}
+footer p,footer a{color:#bfb6ab;font-size:14px;display:block;margin:6px 0}
+.copy{max-width:1200px;margin:35px auto 0;border-top:1px solid #3a342e;padding-top:18px;text-align:center;color:#8e877f;font-size:12px}
+.cart-panel{position:fixed;right:-420px;top:0;width:min(400px,100%);height:100vh;background:#fff;z-index:100;box-shadow:-8px 0 30px rgba(0,0,0,.2);transition:.3s;padding:24px;display:flex;flex-direction:column}
+.cart-panel.open{right:0}
+.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}
+.cart-items{flex:1;overflow:auto;padding:15px 0}
+.cart-item{display:grid;grid-template-columns:65px 1fr auto;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:12px 0}
+.cart-item img{width:65px;height:65px;object-fit:cover;border-radius:7px}
+.cart-item h4{font-size:14px}
+.qty{display:flex;gap:7px;align-items:center;margin-top:5px}
+.qty button{width:24px;height:24px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.cart-foot{border-top:1px solid var(--line);padding-top:15px}
+.total{display:flex;justify-content:space-between;font-size:19px;font-weight:900;margin-bottom:14px}
+.checkout{width:100%;background:var(--green);color:#fff;border:0;padding:13px;border-radius:5px;font-weight:900;cursor:pointer}
+.empty{text-align:center;color:var(--muted);padding:45px 10px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:90}
+.overlay.show{display:block}
+.modal{display:none;position:fixed;z-index:110;inset:0;align-items:center;justify-content:center;padding:18px}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:12px;width:min(560px,100%);max-height:90vh;overflow:auto;padding:26px}
+.modal-box h2{font-family:Georgia,serif;margin-bottom:5px}
+.close{border:0;background:#f4efe8;border-radius:50%;width:35px;height:35px;cursor:pointer}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-size:12px;font-weight:800;display:block;margin-top:12px}
+input,select,textarea{width:100%;padding:11px;border:1px solid #ddd1c2;border-radius:5px;margin-top:5px;background:#fff}
+textarea{min-height:75px;resize:vertical}
+.note{background:#f8f3eb;padding:10px;border-radius:6px;margin:12px 0;font-size:12px;color:#62594f}
+.success{display:none;text-align:center;padding:25px}
+.success.show{display:block}
+.mobile-menu{display:none}
+@media(max-width:900px){
+ .navlinks{display:none}.mobile-menu{display:block}
+ .about-story{grid-template-columns:1fr}
+ .values-grid,.team-grid,.features{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .nav{height:65px;gap:8px}.logo{font-size:23px}.actions .iconbtn:nth-child(2){display:none}
+ .values-grid,.team-grid,.features,.footer-grid{grid-template-columns:1fr}
+ .section{padding:55px 15px}.section-head h2,.about-story h2{font-size:32px}
+ .about-story img{height:280px}
+ .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="topbar">FREE DELIVERY IN SELECTED AREAS • ORDER TODAY & RECEIVE WITH CARE</div>
+
+<header>
+<nav class="nav">
+  <a class="logo" href="index.html">Jewelry<span>Box</span></a>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="index.html#shop">Shop</a>
+    <a href="index.html#collections">Collections</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="actions">
+    <button class="iconbtn mobile-menu" onclick="document.querySelector('.navlinks').style.display='flex'">☰</button>
+    <button class="iconbtn" onclick="openCart()" aria-label="Shopping cart">🛍️<span class="badge" id="cartCount">0</span></button>
+  </div>
+</nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="eyebrow" style="color:var(--gold2)">Our Story</div>
+    <h1>About Jewelry Box</h1>
+    <p>Beautiful pieces. Simple shopping. Thoughtful service — from our home in Kampala to yours.</p>
+  </section>
+
+  <section class="section">
+    <div class="about-story">
+      <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=85" alt="Elegant jewelry display">
+      <div>
+        <div class="eyebrow">Why Jewelry Box</div>
+        <h2>Beautiful pieces. Simple shopping.</h2>
+        <p>Jewelry Box was born from a simple idea: that beautiful, high-quality jewelry should be easy to discover and even easier to order. We curate rings, necklaces, earrings and bracelets that feel personal — pieces that celebrate milestones, complement daily outfits, and become cherished gifts.</p>
+        <p>Every item in our collection is carefully selected for its craftsmanship and timeless appeal. Whether you're treating yourself or finding the perfect present, we're here to make the experience delightful from browsing to unboxing.</p>
+        <p>Based in Kampala, Uganda, we combine local warmth with a modern shopping experience. Our team is always ready to help you confirm your order, arrange delivery, and ensure your Jewelry Box moment is perfect.</p>
+        <p>Every order can be confirmed with your preferred delivery location and payment method before final fulfilment.</p>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature"><b>✨ Carefully Selected</b><span>Elegant designs for different styles and occasions.</span></div>
+      <div class="feature"><b>🛍️ Easy Ordering</b><span>Build your cart and submit your order in minutes.</span></div>
+      <div class="feature"><b>💬 Direct Support</b><span>Confirm your order with our sales team.</span></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-head"><h2>What we stand for</h2><p>Values that guide every piece we select.</p></div>
+    <div class="values-grid">
+      <div class="value-card">
+        <span class="icon">💎</span>
+        <h4>Quality Materials</h4>
+        <p>We focus on pieces that look and feel luxurious — from gold-tone finishes to freshwater pearls.</p>
+      </div>
+      <div class="value-card">
+        <span class="icon">🎁</span>
+        <h4>Gift-Ready</h4>
+        <p>Every order can be beautifully packaged and delivered with care, making gifting effortless.</p>
+      </div>
+      <div class="value-card">
+        <span class="icon">🤝</span>
+        <h4>Trusted Service</h4>
+        <p>Real people, real support. Confirm your order, payment, and delivery directly with our team.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-head"><h2>The people behind the box</h2><p>Passionate about jewelry and making you smile.</p></div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Tarzan - Founder">
+        <h4>Tarzan</h4>
+        <span>FOUNDER & CURATOR</span>
+        <p>With an eye for detail and a love for timeless design, Tarzan selects every piece in the collection.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Frank - Sales support">
+        <h4>Frank</h4>
+        <span>SALES & SUPPORT</span>
+        <p>Frank helps customers confirm orders, arrange deliveries, and find the perfect gift.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>Ready to find your piece?</h2>
+    <p>Explore our collection or get in touch with our team.</p>
+    <a href="index.html#shop" class="btn btn-gold">Shop Collection</a>
+    <a href="contact.html" class="btn btn-light" style="margin-left:8px">Contact Us</a>
+  </div>
+</main>
+
+<footer>
+ <div class="footer-grid">
+   <div><h3>JewelryBox</h3><p>Elegant jewelry and thoughtful gifts, selected with style in mind.</p><p>📍 Kampala, Uganda</p></div>
+   <div><h3>Shop</h3><a href="index.html#shop">All Jewelry</a><a href="index.html#collections">Necklaces</a><a href="index.html#collections">Rings</a><a href="index.html#collections">Earrings</a></div>
+   <div><h3>Customer Care</h3><a href="about.html">About Us</a><a href="contact.html">Delivery</a><a href="contact.html">Payment</a><a href="contact.html">Contact</a></div>
+   <div><h3>Contact</h3><p>📞 +256 709821301</p><p>✉️ Emma@jewelrybox.ug</p><p>💬 WhatsApp orders available</p></div>
+ </div>
+ <div class="copy">© 2026 Jewelry Box. All rights reserved.</div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart-panel" id="cartPanel">
+ <div class="cart-head"><h2>Your Cart</h2><button class="close" onclick="closeCart()">×</button></div>
+ <div class="cart-items" id="cartItems"></div>
+ <div class="cart-foot">
+   <div class="total"><span>Total</span><span id="cartTotal">UGX 0</span></div>
+   <button class="checkout" onclick="openCheckout()">Proceed to Order</button>
+ </div>
+</aside>
+
+<div class="modal" id="checkoutModal">
+ <div class="modal-box">
+   <div style="display:flex;justify-content:space-between;align-items:center"><div><h2>Complete Your Order</h2><p style="color:#746b60;font-size:13px">Enter your details and submit the order.</p></div><button class="close" onclick="closeCheckout()">×</button></div>
+   <form id="orderForm">
+     <div class="form-row">
+       <div><label>Full Name *</label><input id="name" required></div>
+       <div><label>Phone Number *</label><input id="phone" placeholder="+256..." required></div>
+     </div>
+     <div class="form-row">
+       <div><label>Delivery Location *</label><input id="location" placeholder="Kampala / area" required></div>
+       <div><label>Payment Method *</label><select id="payment" required><option value="">Select</option><option>Mobile Money</option><option>Cash on Delivery</option><option>Bank / Other</option></select></div>
+     </div>
+     <label>Additional Note</label><textarea id="note" placeholder="Gift message, preferred delivery time, etc."></textarea>
+     <div class="note">Your order will be prepared as a WhatsApp message for the Jewelry Box sales team. Replace the WhatsApp number in the code before publishing.</div>
+     <button class="checkout" type="submit">Send Order on WhatsApp</button>
+   </form>
+   <div class="success" id="success"><h2>Order Ready ✓</h2><p>Your order has been prepared. If WhatsApp did not open automatically, please contact the seller directly.</p></div>
+ </div>
+</div>
+
+<script>
+const PRODUCTS = [
+ {id:1,name:"Classic Gold Ring",price:185000,old:220000,img:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=85",tag:"BEST SELLER"},
+ {id:2,name:"Pearl Drop Earrings",price:145000,old:175000,img:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=85",tag:"NEW"},
+ {id:3,name:"Delicate Gold Necklace",price:210000,old:250000,img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=85",tag:"POPULAR"},
+ {id:4,name:"Elegant Bracelet",price:165000,old:195000,img:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=85",tag:"NEW"},
+ {id:5,name:"Minimalist Pendant",price:125000,old:150000,img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=85",tag:"SALE"},
+ {id:6,name:"Luxury Statement Ring",price:295000,old:350000,img:"https://images.unsplash.com/photo-1627293509201-cd31e9d6c5b4?auto=format&fit=crop&w=800&q=85",tag:"PREMIUM"},
+ {id:7,name:"Classic Hoop Earrings",price:110000,old:135000,img:"https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=800&q=85",tag:"POPULAR"},
+ {id:8,name:"Charm Bracelet",price:155000,old:185000,img:"https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=85",tag:"GIFT"},
+];
+let cart=JSON.parse(localStorage.getItem("jewelryBoxCart")||"[]");
+const money=n=>"UGX "+n.toLocaleString();
+function changeQty(id,d){
+ const x=cart.find(i=>i.id===id); if(!x)return;
+ x.qty+=d;if(x.qty<=0)cart=cart.filter(i=>i.id!==id);save();
+}
+function save(){localStorage.setItem("jewelryBoxCart",JSON.stringify(cart));renderCart()}
+function renderCart(){
+ const box=document.getElementById("cartItems");
+ if(!cart.length){box.innerHTML='<div class="empty">Your cart is empty.<br>Choose something beautiful.</div>';}
+ else box.innerHTML=cart.map(i=>{const p=PRODUCTS.find(x=>x.id===i.id);return `
+ <div class="cart-item"><img src="${p.img}" alt=""><div><h4>${p.name}</h4><div>${money(p.price)}</div>
+ <div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${i.qty}</span><button onclick="changeQty(${p.id},1)">+</button></div></div><b>${money(p.price*i.qty)}</b></div>`}).join("");
+ const total=cart.reduce((s,i)=>s+PRODUCTS.find(p=>p.id===i.id).price*i.qty,0);
+ document.getElementById("cartTotal").textContent=money(total);
+ document.getElementById("cartCount").textContent=cart.reduce((s,i)=>s+i.qty,0);
+}
+function openCart(){document.getElementById("cartPanel").classList.add("open");document.getElementById("overlay").classList.add("show")}
+function closeCart(){document.getElementById("cartPanel").classList.remove("open");document.getElementById("overlay").classList.remove("show")}
+function openCheckout(){
+ if(!cart.length){alert("Please add at least one item to your cart.");return}
+ closeCart();document.getElementById("checkoutModal").classList.add("show");
+}
+function closeCheckout(){document.getElementById("checkoutModal").classList.remove("show")}
+document.getElementById("orderForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("name").value.trim(),phone=document.getElementById("phone").value.trim();
+ const loc=document.getElementById("location").value.trim(),pay=document.getElementById("payment").value,note=document.getElementById("note").value.trim();
+ let total=0, lines=[];
+ cart.forEach(i=>{const p=PRODUCTS.find(x=>x.id===i.id);total+=p.price*i.qty;lines.push(`• ${p.name} x${i.qty} — ${money(p.price*i.qty)}`)});
+ const message=`Hello Jewelry Box, I would like to place an order.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ADelivery: ${encodeURIComponent(loc)}%0APayment: ${encodeURIComponent(pay)}%0A%0AItems:%0A${encodeURIComponent(lines.join("\n"))}%0A%0ATotal: ${money(total)}%0ANote: ${encodeURIComponent(note||"None")}`;
+ const whatsappNumber="256700000000"; // REPLACE WITH YOUR REAL NUMBER
+ window.open(`https://wa.me/${whatsappNumber}?text=${message}`,"_blank");
+ document.getElementById("orderForm").style.display="none";document.getElementById("success").classList.add("show");
+});
+renderCart();
+</script>
+</body>
+</html>

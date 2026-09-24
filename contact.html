@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Jewelry Box - reach our team for orders, delivery, payment, and customer support in Kampala, Uganda.">
+<title>Contact Us | Jewelry Box</title>
+<style>
+:root{
+  --gold:#c89b3c; --gold2:#e6c46a; --dark:#17130f; --cream:#fbf7ef;
+  --white:#fff; --muted:#746b60; --line:#e9e0d3; --green:#198754;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+button,input,select{font:inherit}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--dark);color:#fff;text-align:center;padding:9px;font-size:13px;letter-spacing:.4px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;height:76px;display:flex;align-items:center;gap:30px;padding:0 20px}
+.logo{font-family:Georgia,serif;font-size:29px;font-weight:700;letter-spacing:1px;white-space:nowrap}
+.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:24px;margin-left:auto}
+.navlinks a{font-size:14px;font-weight:700}
+.navlinks a:hover{color:var(--gold)}
+.navlinks a.active{color:var(--gold)}
+.actions{display:flex;gap:9px;align-items:center}
+.iconbtn{border:0;background:#f5efe5;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:18px;position:relative}
+.badge{position:absolute;right:-2px;top:-3px;background:var(--gold);color:#fff;border-radius:20px;font-size:10px;padding:2px 6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:5px;padding:13px 22px;cursor:pointer;font-weight:800;transition:.2s}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#ad8229;transform:translateY(-1px)}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800;margin-bottom:10px}
+.page-hero{background:linear-gradient(rgba(23,19,15,.72),rgba(23,19,15,.72)),url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1600&q=85") center/cover;color:#fff;text-align:center;padding:110px 20px}
+.page-hero h1{font-family:Georgia,serif;font-size:clamp(38px,5vw,58px);margin-bottom:14px}
+.page-hero p{max-width:700px;margin:0 auto;color:#e2d9cd;font-size:17px}
+.section{max-width:1200px;margin:auto;padding:75px 20px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}
+.contact-info{background:#fff;padding:38px;border-radius:16px;border:1px solid var(--line)}
+.contact-info h3{font-family:Georgia,serif;font-size:26px;margin-bottom:20px}
+.contact-info p{display:flex;align-items:center;gap:14px;font-size:15px;color:#4f463d;margin-bottom:16px}
+.contact-info .icon{font-size:22px;width:32px;text-align:center}
+.contact-info a{color:var(--gold);font-weight:700}
+.map-placeholder{width:100%;height:260px;border-radius:14px;background:url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80') center/cover;margin-top:28px;position:relative;overflow:hidden}
+.map-placeholder::after{content:"📍 Kampala, Uganda";position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;padding:12px 20px;font-weight:700;letter-spacing:.5px}
+.contact-form{background:#fff;padding:38px;border-radius:16px;border:1px solid var(--line)}
+.contact-form h3{font-family:Georgia,serif;font-size:26px;margin-bottom:22px}
+.form-group{margin-bottom:18px}
+.contact-form label{font-weight:700;font-size:13px;color:var(--dark);display:block;margin-bottom:4px}
+.contact-form input,.contact-form textarea{width:100%;padding:11px;border:1px solid #ddd1c2;border-radius:5px;background:#fff}
+.contact-form textarea{min-height:90px;resize:vertical}
+.contact-form .btn-gold{width:100%;padding:14px;font-size:16px;margin-top:6px}
+.contact-note{font-size:12px;color:var(--muted);margin-top:18px}
+.info-strip{background:var(--dark);color:#fff;text-align:center;padding:70px 20px;border-radius:16px;max-width:1200px;margin:0 auto 75px}
+.info-strip h2{font-family:Georgia,serif;font-size:36px;margin-bottom:10px}
+.info-strip p{color:#cfc6ba;margin-bottom:24px}
+.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.faq-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 24px}
+.faq-card h4{font-family:Georgia,serif;font-size:20px;margin-bottom:10px}
+.faq-card p{font-size:14px;color:var(--muted)}
+footer{background:var(--dark);color:#eee;padding:55px 20px 25px}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:35px}
+footer h3{font-family:Georgia,serif;color:#fff;margin-bottom:12px}
+footer p,footer a{color:#bfb6ab;font-size:14px;display:block;margin:6px 0}
+.copy{max-width:1200px;margin:35px auto 0;border-top:1px solid #3a342e;padding-top:18px;text-align:center;color:#8e877f;font-size:12px}
+.cart-panel{position:fixed;right:-420px;top:0;width:min(400px,100%);height:100vh;background:#fff;z-index:100;box-shadow:-8px 0 30px rgba(0,0,0,.2);transition:.3s;padding:24px;display:flex;flex-direction:column}
+.cart-panel.open{right:0}
+.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}
+.cart-items{flex:1;overflow:auto;padding:15px 0}
+.cart-item{display:grid;grid-template-columns:65px 1fr auto;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:12px 0}
+.cart-item img{width:65px;height:65px;object-fit:cover;border-radius:7px}
+.cart-item h4{font-size:14px}
+.qty{display:flex;gap:7px;align-items:center;margin-top:5px}
+.qty button{width:24px;height:24px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.cart-foot{border-top:1px solid var(--line);padding-top:15px}
+.total{display:flex;justify-content:space-between;font-size:19px;font-weight:900;margin-bottom:14px}
+.checkout{width:100%;background:var(--green);color:#fff;border:0;padding:13px;border-radius:5px;font-weight:900;cursor:pointer}
+.empty{text-align:center;color:var(--muted);padding:45px 10px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:90}
+.overlay.show{display:block}
+.modal{display:none;position:fixed;z-index:110;inset:0;align-items:center;justify-content:center;padding:18px}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:12px;width:min(560px,100%);max-height:90vh;overflow:auto;padding:26px}
+.modal-box h2{font-family:Georgia,serif;margin-bottom:5px}
+.close{border:0;background:#f4efe8;border-radius:50%;width:35px;height:35px;cursor:pointer}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-size:12px;font-weight:800;display:block;margin-top:12px}
+input,select,textarea{width:100%;padding:11px;border:1px solid #ddd1c2;border-radius:5px;margin-top:5px;background:#fff}
+textarea{min-height:75px;resize:vertical}
+.note{background:#f8f3eb;padding:10px;border-radius:6px;margin:12px 0;font-size:12px;color:#62594f}
+.success{display:none;text-align:center;padding:25px}
+.success.show{display:block}
+.mobile-menu{display:none}
+@media(max-width:900px){
+ .navlinks{display:none}.mobile-menu{display:block}
+ .contact-grid{grid-template-columns:1fr}
+ .faq-grid{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .nav{height:65px;gap:8px}.logo{font-size:23px}.actions .iconbtn:nth-child(2){display:none}
+ .faq-grid,.footer-grid{grid-template-columns:1fr}
+ .section{padding:55px 15px}
+ .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="topbar">FREE DELIVERY IN SELECTED AREAS • ORDER TODAY & RECEIVE WITH CARE</div>
+
+<header>
+<nav class="nav">
+  <a class="logo" href="index.html">Jewelry<span>Box</span></a>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="index.html#shop">Shop</a>
+    <a href="index.html#collections">Collections</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+  <div class="actions">
+    <button class="iconbtn mobile-menu" onclick="document.querySelector('.navlinks').style.display='flex'">☰</button>
+    <button class="iconbtn" onclick="openCart()" aria-label="Shopping cart">🛍️<span class="badge" id="cartCount">0</span></button>
+  </div>
+</nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="eyebrow" style="color:var(--gold2)">Get in touch</div>
+    <h1>Contact Jewelry Box</h1>
+    <p>We're here to help with orders, delivery questions, payment methods, or finding the perfect piece.</p>
+  </section>
+
+  <section class="section">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Reach us directly</h3>
+        <p><span class="icon">📞</span> +256 709821301</p>
+        <p><span class="icon">✉️</span> <a href="mailto:tarzanemma49@gmail.com">tarzanemma49@gmail.com</a></p>
+        <p><span class="icon">💬</span> WhatsApp orders available — message us anytime</p>
+        <p><span class="icon">📍</span> Kampala, Uganda</p>
+        <p style="margin-top:26px; font-size:15px; color:#5a5249; display:block;">Our team typically responds within a few hours during business days. For urgent orders, please use WhatsApp or phone.</p>
+        <div class="map-placeholder"></div>
+        <p style="margin-top:14px; font-size:13px; color:var(--muted); display:block;">📍 Serving Kampala and surrounding areas. Delivery available in selected zones.</p>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send a message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Your Name *</label>
+            <input id="contactName" type="text" placeholder="e.g. Sarah K." required>
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Phone / WhatsApp *</label>
+            <input id="contactPhone" type="tel" placeholder="+256..." required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email (optional)</label>
+            <input id="contactEmail" type="email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message *</label>
+            <textarea id="contactMessage" placeholder="I'd like to ask about..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold">Send Message</button>
+        </form>
+        <p class="contact-note">Prefer WhatsApp? Message us directly at +256 709821301 for the fastest response.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-head"><h2>Quick answers</h2><p>Common questions about ordering, delivery and payment.</p></div>
+    <div class="faq-grid">
+      <div class="faq-card">
+        <h4> Delivery</h4>
+        <p>We deliver within Kampala and selected surrounding areas. Delivery fees and timelines are confirmed when you place your order.</p>
+      </div>
+      <div class="faq-card">
+        <h4> Payment</h4>
+        <p>We accept Mobile Money, Cash on Delivery, and Bank / Other arrangements. Choose your preferred method during checkout.</p>
+      </div>
+      <div class="faq-card">
+        <h4> Ordering</h4>
+        <p>Browse the collection, add items to your cart, and submit your order. Our sales team confirms everything with you directly.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="info-strip">
+    <h2>Let's find something beautiful.</h2>
+    <p>Shop the collection or message us for a personal recommendation.</p>
+    <a href="index.html#shop" class="btn btn-gold">Shop Collection</a>
+    <a href="about.html" class="btn btn-light" style="margin-left:8px">About Us</a>
+  </div>
+</main>
+
+<footer>
+ <div class="footer-grid">
+   <div><h3>JewelryBox</h3><p>Elegant jewelry and thoughtful gifts, selected with style in mind.</p><p>📍 Kampala, Uganda</p></div>
+   <div><h3>Shop</h3><a href="index.html#shop">All Jewelry</a><a href="index.html#collections">Necklaces</a><a href="index.html#collections">Rings</a><a href="index.html#collections">Earrings</a></div>
+   <div><h3>Customer Care</h3><a href="about.html">About Us</a><a href="contact.html">Delivery</a><a href="contact.html">Payment</a><a href="contact.html">Contact</a></div>
+   <div><h3>Contact</h3><p>📞 +256 709821301</p><p>✉️ tarzanemma49@gmail.com</p><p>💬 WhatsApp orders available</p></div>
+ </div>
+ <div class="copy">© 2026 Jewelry Box. All rights reserved.</div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart-panel" id="cartPanel">
+ <div class="cart-head"><h2>Your Cart</h2><button class="close" onclick="closeCart()">×</button></div>
+ <div class="cart-items" id="cartItems"></div>
+ <div class="cart-foot">
+   <div class="total"><span>Total</span><span id="cartTotal">UGX 0</span></div>
+   <button class="checkout" onclick="openCheckout()">Proceed to Order</button>
+ </div>
+</aside>
+
+<div class="modal" id="checkoutModal">
+ <div class="modal-box">
+   <div style="display:flex;justify-content:space-between;align-items:center"><div><h2>Complete Your Order</h2><p style="color:#746b60;font-size:13px">Enter your details and submit the order.</p></div><button class="close" onclick="closeCheckout()">×</button></div>
+   <form id="orderForm">
+     <div class="form-row">
+       <div><label>Full Name *</label><input id="name" required></div>
+       <div><label>Phone Number *</label><input id="phone" placeholder="+256..." required></div>
+     </div>
+     <div class="form-row">
+       <div><label>Delivery Location *</label><input id="location" placeholder="Kampala / area" required></div>
+       <div><label>Payment Method *</label><select id="payment" required><option value="">Select</option><option>Mobile Money</option><option>Cash on Delivery</option><option>Bank / Other</option></select></div>
+     </div>
+     <label>Additional Note</label><textarea id="note" placeholder="Gift message, preferred delivery time, etc."></textarea>
+     <div class="note">Your order will be prepared as a WhatsApp message for the Jewelry Box sales team. Replace the WhatsApp number in the code before publishing.</div>
+     <button class="checkout" type="submit">Send Order on WhatsApp</button>
+   </form>
+   <div class="success" id="success"><h2>Order Ready ✓</h2><p>Your order has been prepared. If WhatsApp did not open automatically, please contact the seller directly.</p></div>
+ </div>
+</div>
+
+<script>
+/* ============================================================
+   CONTACT FORM — Sends to WhatsApp (+256709821301) and Email
+   (tarzanemma49@gmail.com) after all required fields are filled.
+   ============================================================ */
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  // Collect values
+  const name    = document.getElementById("contactName").value.trim();
+  const phone   = document.getElementById("contactPhone").value.trim();
+  const email   = document.getElementById("contactEmail").value.trim();
+  const message = document.getElementById("contactMessage").value.trim();
+
+  // Validate required fields
+  if(!name || !phone || !message){
+    alert("Please fill in all required fields (Name, Phone, and Message).");
+    return;
+  }
+
+  // Build the message
+  const fullMessage =
+    "Hello Jewelry Box, I have a message.\n\n" +
+    "Name: "    + name    + "\n" +
+    "Phone: "   + phone   + "\n" +
+    "Email: "   + (email || "Not provided") + "\n\n" +
+    "Message:\n" + message;
+
+  // WhatsApp number (with country code, no + or spaces)
+  const whatsappNumber = "256709821301";
+  const whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(fullMessage);
+
+  // Email details
+  const emailAddress = "tarzanemma49@gmail.com";
+  const emailSubject = "New Contact Message from Jewelry Box Website";
+  const emailBody = fullMessage;
+  const mailtoURL = "mailto:" + emailAddress +
+                    "?subject=" + encodeURIComponent(emailSubject) +
+                    "&body=" + encodeURIComponent(emailBody);
+
+  // Open WhatsApp and Email
+  window.open(whatsappURL, "_blank");
+  window.location.href = mailtoURL;
+
+  // Feedback
+  alert("Thank you, " + name + "! Your message has been prepared.\n\nIt will be sent via WhatsApp and Email. Please complete the send action in each window that opens.");
+
+  // Reset the form
+  this.reset();
+});
+
+/* ============================================================
+   CART & CHECKOUT LOGIC (unchanged)
+   ============================================================ */
+const PRODUCTS = [
+ {id:1,name:"Classic Gold Ring",price:185000,old:220000,img:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=85",tag:"BEST SELLER"},
+ {id:2,name:"Pearl Drop Earrings",price:145000,old:175000,img:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=85",tag:"NEW"},
+ {id:3,name:"Delicate Gold Necklace",price:210000,old:250000,img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=85",tag:"POPULAR"},
+ {id:4,name:"Elegant Bracelet",price:165000,old:195000,img:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=85",tag:"NEW"},
+ {id:5,name:"Minimalist Pendant",price:125000,old:150000,img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=85",tag:"SALE"},
+ {id:6,name:"Luxury Statement Ring",price:295000,old:350000,img:"https://images.unsplash.com/photo-1627293509201-cd31e9d6c5b4?auto=format&fit=crop&w=800&q=85",tag:"PREMIUM"},
+ {id:7,name:"Classic Hoop Earrings",price:110000,old:135000,img:"https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=800&q=85",tag:"POPULAR"},
+ {id:8,name:"Charm Bracelet",price:155000,old:185000,img:"https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=85",tag:"GIFT"},
+];
+let cart=JSON.parse(localStorage.getItem("jewelryBoxCart")||"[]");
+const money=n=>"UGX "+n.toLocaleString();
+function changeQty(id,d){
+ const x=cart.find(i=>i.id===id); if(!x)return;
+ x.qty+=d;if(x.qty<=0)cart=cart.filter(i=>i.id!==id);save();
+}
+function save(){localStorage.setItem("jewelryBoxCart",JSON.stringify(cart));renderCart()}
+function renderCart(){
+ const box=document.getElementById("cartItems");
+ if(!cart.length){box.innerHTML='<div class="empty">Your cart is empty.<br>Choose something beautiful.</div>';}
+ else box.innerHTML=cart.map(i=>{const p=PRODUCTS.find(x=>x.id===i.id);return `
+ <div class="cart-item"><img src="${p.img}" alt=""><div><h4>${p.name}</h4><div>${money(p.price)}</div>
+ <div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${i.qty}</span><button onclick="changeQty(${p.id},1)">+</button></div></div><b>${money(p.price*i.qty)}</b></div>`}).join("");
+ const total=cart.reduce((s,i)=>s+PRODUCTS.find(p=>p.id===i.id).price*i.qty,0);
+ document.getElementById("cartTotal").textContent=money(total);
+ document.getElementById("cartCount").textContent=cart.reduce((s,i)=>s+i.qty,0);
+}
+function openCart(){document.getElementById("cartPanel").classList.add("open");document.getElementById("overlay").classList.add("show")}
+function closeCart(){document.getElementById("cartPanel").classList.remove("open");document.getElementById("overlay").classList.remove("show")}
+function openCheckout(){
+ if(!cart.length){alert("Please add at least one item to your cart.");return}
+ closeCart();document.getElementById("checkoutModal").classList.add("show");
+}
+function closeCheckout(){document.getElementById("checkoutModal").classList.remove("show")}
+document.getElementById("orderForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("name").value.trim(),phone=document.getElementById("phone").value.trim();
+ const loc=document.getElementById("location").value.trim(),pay=document.getElementById("payment").value,note=document.getElementById("note").value.trim();
+ let total=0, lines=[];
+ cart.forEach(i=>{const p=PRODUCTS.find(x=>x.id===i.id);total+=p.price*i.qty;lines.push(`• ${p.name} x${i.qty} — ${money(p.price*i.qty)}`)});
+ const message=`Hello Jewelry Box, I would like to place an order.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ADelivery: ${encodeURIComponent(loc)}%0APayment: ${encodeURIComponent(pay)}%0A%0AItems:%0A${encodeURIComponent(lines.join("\n"))}%0A%0ATotal: ${money(total)}%0ANote: ${encodeURIComponent(note||"None")}`;
+ const whatsappNumber="256709821301";
+ window.open(`https://wa.me/${whatsappNumber}?text=${message}`,"_blank");
+ document.getElementById("orderForm").style.display="none";document.getElementById("success").classList.add("show");
+});
+renderCart();
+</script>
+</body>
+</html>
